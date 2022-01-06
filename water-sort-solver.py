@@ -24,3 +24,15 @@ class Color(Enum):
     LIGHT_BLUE = 14
     LIGHT_YELLOW = 15
 
+
+def make_tube(color_values):
+    return list(map(Color, color_values))
+
+
+def main():
+    tube1 = make_tube([1, 1, 2, 3])
+    print(tube1)
+
+
+if __name__ == "__main__":
+    main()
