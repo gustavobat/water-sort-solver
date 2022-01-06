@@ -29,6 +29,10 @@ def make_tube(color_values):
     return list(map(Color, color_values))
 
 
+def make_empty_tube():
+    return list()
+
+
 def main():
     tube1 = make_tube([1, 1, 2, 3])
     print(tube1)
