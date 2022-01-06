@@ -14,15 +14,18 @@ class Color(Enum):
     YELLOW = 4
     WHITE = 5
     GREY = 6
-    PINK = 7
-    DARK_RED = 8
-    DARK_GREEN = 9
-    DARK_BLUE = 10
-    DARK_YELLOW = 11
-    LIGHT_RED = 12
-    LIGHT_GREEN = 13
-    LIGHT_BLUE = 14
-    LIGHT_YELLOW = 15
+    ORANGE = 7
+    PINK = 8
+    PURPLE = 9
+    BROWN = 10
+    DARK_RED = 11
+    DARK_GREEN = 12
+    DARK_BLUE = 13
+    DARK_YELLOW = 14
+    LIGHT_RED = 15
+    LIGHT_GREEN = 16
+    LIGHT_BLUE = 17
+    LIGHT_YELLOW = 18
 
 
 def make_tube(color_values):
