@@ -2,9 +2,9 @@ from enum import Enum
 
 
 # Rules:
-# - Only the top ball of each stack can be moved.
-# - A ball can be moved to the top of another ball of the same colour
-# - A ball can be moved to an empty stack.
+# - Only the top fraction of each tube can be moved.
+# - A fraction can be moved to the top of another fraction of the same color.
+# - A fraction can be moved to an empty tube.
 
 
 class Color(Enum):
