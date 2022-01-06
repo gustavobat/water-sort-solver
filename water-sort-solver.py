@@ -36,6 +36,15 @@ def make_empty_tube():
     return list()
 
 
+def tubes_to_string(tubes):
+    s = ''
+    for tube in tubes:
+        for color in tube:
+            s += str(color.value)
+        s += ';'
+    return s
+
+
 def main():
     tube1 = make_tube([1, 1, 2, 3])
     print(tube1)
