@@ -6,7 +6,7 @@ from enum import Enum
 # - A fraction can be moved to the top of another fraction of the same color.
 # - A fraction can be moved to an empty tube.
 
-
+# Enum class that defines colors
 class Color(Enum):
     RED = 1
     GREEN = 2
@@ -28,14 +28,17 @@ class Color(Enum):
     LIGHT_YELLOW = 18
 
 
+# Create a list of colors out of integer values
 def make_tube(color_values):
     return list(map(Color, color_values))
 
 
+# Create empty tube
 def make_empty_tube():
     return list()
 
 
+# Convert tube to string form
 def tubes_to_string(tubes):
     s = ''
     for tube in tubes:
@@ -45,6 +48,7 @@ def tubes_to_string(tubes):
     return s
 
 
+# Check if all tubes are sorted
 def is_sorted(tubes):
     for tube in tubes:
         # Check if tube has more than one color
