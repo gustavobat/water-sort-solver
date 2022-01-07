@@ -56,7 +56,7 @@ def is_sorted(tubes):
         if len(set(tube)) > 1:
             return False
         # Check if tube is empty or full
-        if len(tube) != 4 or len(tube) != 0:
+        if len(tube) != 4 and len(tube) != 0:
             return False
     return True
 
