@@ -96,6 +96,9 @@ def solve(tubes, visited, answer):
                 # Create new tube configuration
                 new_tubes = copy.deepcopy(tubes)
                 new_tubes[j].append(new_tubes[i].pop())
+                while is_valid_move(new_tubes, i, j):
+                    new_tubes[j].append(new_tubes[i].pop())
+
                 if is_sorted(new_tubes):
                     # Update answer
                     answer.append([i, j, 1])
