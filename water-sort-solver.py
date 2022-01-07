@@ -109,6 +109,20 @@ def solve(tubes, visited, answer):
     return False
 
 
+def interpret_answer(answer):
+    simplified_answer = [answer[0]]
+    for move in answer[1:]:
+        if move[0] == simplified_answer[-1][0] and move[1] == simplified_answer[-1][1]:
+            simplified_answer[-1][2] += 1
+        else:
+            simplified_answer.append(move.copy())
+
+    for move in reversed(simplified_answer):
+        text = "Move tube " + str(move[0]) + " to " + str(move[1]) + " "
+        text += str(move[2]) + " time(s)."
+        print(text)
+
+
 def main():
     tube1 = make_tube([2, 3, 3, 3])
     tube2 = make_tube([4, 3, 1, 4])
@@ -122,8 +136,7 @@ def main():
     visited = set()
 
     solve(tubes, visited, answer)
-    print(tubes)
-    print(answer)
+    interpret_answer(answer)
 
 
 if __name__ == "__main__":
