@@ -109,8 +109,20 @@ def solve(tubes, visited, answer):
 
 
 def main():
-    tube1 = make_tube([1, 1, 2, 3])
-    print(tube1)
+    tube1 = make_tube([2, 3, 3, 3])
+    tube2 = make_tube([4, 3, 1, 4])
+    tube3 = make_tube([4, 2, 2, 4])
+    tube4 = make_tube([1, 1, 1, 2])
+    tube5 = make_empty_tube()
+    tube6 = make_empty_tube()
+
+    tubes = (tube1, tube2, tube3, tube4, tube5, tube6)
+    answer = list()
+    visited = set()
+
+    solve(tubes, visited, answer)
+    print(tubes)
+    print(answer)
 
 
 if __name__ == "__main__":
