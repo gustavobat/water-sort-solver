@@ -45,6 +45,17 @@ def tubes_to_string(tubes):
     return s
 
 
+def is_sorted(tubes):
+    for tube in tubes:
+        # Check if tube has more than one color
+        if len(set(tube)) > 1:
+            return False
+        # Check if tube is empty or full
+        if len(tube) != 4 or len(tube) != 0:
+            return False
+    return True
+
+
 def main():
     tube1 = make_tube([1, 1, 2, 3])
     print(tube1)
