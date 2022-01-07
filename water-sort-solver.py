@@ -56,6 +56,28 @@ def is_sorted(tubes):
     return True
 
 
+# Check if the move from tubes[i] to tubes[j] is valid
+def is_valid_move(tubes, i, j):
+
+    # Can't move from and empty tube
+    if len(tubes[i]) == 0:
+        return False
+    # Can't move to a full tube
+    if len(tubes[j]) == 4:
+        return False
+    # If the source tube is solved, leave it alone
+    if len(set(tubes[i])) == 1 and len(tubes[i]) == 4:
+        return False
+    # Don't move to empty tube if source tube is same colored
+    if len(tubes[j]) == 0:
+        if len(set(tubes[i])) <= 1:
+            return False
+        else:
+            return True
+    # Check color of top fractions
+    return tubes[i][-1] == tubes[j][-1]
+
+
 def main():
     tube1 = make_tube([1, 1, 2, 3])
     print(tube1)
