@@ -118,7 +118,7 @@ def interpret_answer(answer):
             simplified_answer.append(move.copy())
 
     for move in reversed(simplified_answer):
-        text = "Move tube " + str(move[0]) + " to " + str(move[1]) + " "
+        text = "Move tube " + str(move[0] + 1) + " to " + str(move[1] + 1) + " "
         text += str(move[2]) + " time(s)."
         print(text)
 
