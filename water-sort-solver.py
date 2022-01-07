@@ -64,7 +64,6 @@ def is_sorted(tubes):
 
 # Check if the move from tubes[i] to tubes[j] is valid
 def is_valid_move(tubes, i, j):
-
     # Can't move from and empty tube
     if len(tubes[i]) == 0:
         return False
