@@ -131,7 +131,7 @@ def main():
     tube5 = make_empty_tube()
     tube6 = make_empty_tube()
 
-    tubes = (tube1, tube2, tube3, tube4, tube5, tube6)
+    tubes = [tube1, tube2, tube3, tube4, tube5, tube6]
     answer = list()
     visited = set()
 
