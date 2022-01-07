@@ -30,6 +30,7 @@ class Color(Enum):
 
 # Create a list of colors out of integer values
 def make_tube(color_values):
+    assert all(1 <= el <= 18 for el in color_values), "Please enter color values from 1 to 18!"
     return list(map(Color, color_values))
 
 
