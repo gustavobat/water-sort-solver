@@ -1,4 +1,5 @@
 from enum import Enum
+import copy
 
 
 # Rules:
@@ -94,7 +95,7 @@ def solve(tubes, visited, answer):
                 continue
             if is_valid_move(tubes, i, j):
                 # Create new tube configuration
-                new_tubes = tubes
+                new_tubes = copy.deepcopy(tubes)
                 new_tubes[j].append(new_tubes[i].pop())
                 if is_sorted(new_tubes):
                     # Update answer
