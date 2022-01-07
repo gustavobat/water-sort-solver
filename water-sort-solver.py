@@ -83,6 +83,31 @@ def is_valid_move(tubes, i, j):
     return tubes[i][-1] == tubes[j][-1]
 
 
+# Solve puzzle
+def solve(tubes, visited, answer):
+    tube_to_string = tubes_to_string(tubes)
+    visited.add(tube_to_string)
+    n_tubes = len(tubes)
+    for i in range(n_tubes):
+        for j in range(n_tubes):
+            if i == j:
+                continue
+            if is_valid_move(tubes, i, j):
+                # Create new tube configuration
+                new_tubes = tubes
+                new_tubes[j].append(new_tubes[i].pop())
+                if is_sorted(new_tubes):
+                    # Update answer
+                    answer.append([i, j, 1])
+                    return True
+                if tubes_to_string(new_tubes) not in visited:
+                    solve_for_rest = solve(new_tubes, visited, answer)
+                    if solve_for_rest:
+                        answer.append([i, j, 1])
+                        return True
+    return False
+
+
 def main():
     tube1 = make_tube([1, 1, 2, 3])
     print(tube1)
